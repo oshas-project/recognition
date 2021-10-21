@@ -1,6 +1,9 @@
-import requests
+from picamera import PiCamera
+from time import sleep
 
-API_URL = "http://localhost:5000/"
+def main():
+	camera = PiCamera()
+	camera.capture('/home/pi/testing.jpg')
 
-r = requests.get(API_URL + "profiles", data={'username':"bob"})
-print(r.json())
+if __name__ == "__main__":
+    main()
